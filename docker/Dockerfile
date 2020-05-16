@@ -17,9 +17,8 @@ RUN apk --update --no-cache add openssh \
 	git \
 	tmux 
 	 
-RUN cd /tmp && curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.18.2/bin/linux/amd64/kubectl
+RUN cd /tmp && curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/`uname -m`/kubectl
 RUN chmod +x /tmp/kubectl && mv /tmp/kubectl /usr/local/bin/kubectl
-RUN mkdir -p /root/.ssh
 ADD run.rb /run.rb 
 
 CMD ruby run.rb

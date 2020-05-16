@@ -5,6 +5,6 @@ metadata:
 spec:
   containers:
   - name: alpine-pod
-    image: alpine-pod
+    image: busybox42/alpine-pod
     imagePullPolicy: Never
   restartPolicy: OnFailure
