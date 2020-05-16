@@ -6,9 +6,10 @@ def start_pod
 	}
 	File.write('/var/run/start_pod', 'TRUE')
 	r = File.read("/var/run/start_pod")
-	if r == "TRUE"
-		sleep(5)
-	elsif r == "FALSE"
+	while r == "TRUE"
+		sleep(10)
+	end
+	if r == "FALSE"
 		system('wall System will shutdown in 30 seconds!!!')
 		sleep(30)
 		exit
