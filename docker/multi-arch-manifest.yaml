@@ -4,11 +4,7 @@ manifests:
     platform:
       architecture: amd64
       os: linux
-  - image: busybox42/alpine-pod:i386
-    platform:
-      architecture: i386
-      os: linux
-  - image: busybox42/alpine-pod:arm32v5
+  - image: busybox42/alpine-pod:arm32v6
     platform:
       architecture: arm
       os: linux
@@ -18,8 +14,3 @@ manifests:
       architecture: arm
       os: linux
       variant: v7
-  - image: busybox42/alpine-pod:arm64v8
-    platform:
-      architecture: arm64
-      os: linux
-      variant: v8
