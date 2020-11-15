@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM i386/alpine:latest
 
 RUN apk --update --no-cache add openssh \
 	ruby \
@@ -19,6 +19,6 @@ RUN apk --update --no-cache add openssh \
 	 
 RUN cd /tmp && curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
 RUN chmod +x /tmp/kubectl && mv /tmp/kubectl /usr/local/bin/kubectl
-ADD run.rb /run.rb 
+ADD src/run.rb /run.rb 
 
 CMD ruby run.rb
